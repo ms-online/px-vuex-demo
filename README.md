@@ -1,3 +1,5 @@
 # vuex-demo
 
-## lesson:mapState 的使用
+## lesson3:getters & mapGetters 的使用
+
+getter 可以对原有状态进行操作
