@@ -1,6 +1,5 @@
 # vuex-demo
 
-## lesson5:action & mapactions
+## lesson6:modules
 
-通过异步形式操作 mutation 改变状态；
-一般用于请求接口，定时器等...
+将 store 分割成模块，有几个 store 就分为几个模块
