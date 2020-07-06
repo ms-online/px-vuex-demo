@@ -4,14 +4,21 @@
     <p>{{ completedTodos }}</p>
     <p>{{ completedTodosCount }}</p>
     <p>{{ getTodoById(3) }}</p> -->
-    <button @click="decrementCount({ count: 3 })">-</button>
+    <!-- <button @click="decrementCount({ count: 3 })">-</button> -->
+    <button @click="decrementCountAsync({ count: 3 })">-</button>
     <span> {{ count }} </span>
-    <button @click="incrementCount">+</button>
+    <!-- <button @click="incrementCount">+</button> -->
+    <button @click="incrementCountAsync">+</button>
+    <br />
+    <br />
+    <p>{{ completedTodos }}</p>
+    <!-- fetchTodos -->
+    <button @click="fetchTodos">拉取数据</button>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 export default {
   name: 'App',
   components: {},
@@ -52,7 +59,7 @@ export default {
   // },
 
   // mutaion&mapMutations
-  methods: mapMutations(['incrementCount', 'decrementCount']),
+  // methods: mapMutations(['incrementCount', 'decrementCount']),
   // methods: {
   //   decrementCount(payload) {
   //     // console.log(1);
@@ -61,6 +68,25 @@ export default {
   //   incrementCount() {
   //     // console.log(0);
   //     this.$store.commit('incrementCount');
+  //   },
+  // },
+
+  // action & mapActions
+  methods: mapActions([
+    'incrementCountAsync',
+    'decrementCountAsync',
+    'fetchTodos',
+  ]),
+  // methods: {
+  //   increment() {
+  //     this.$store.dispatch('incrementCountAsync');
+  //   },
+  //   decrement(n) {
+  //     this.$store.dispatch('decrementCountAsync', n);
+  //   },
+
+  //   fetchTodos() {
+  //     this.$store.dispatch('fetchTodos');
   //   },
   // },
 };

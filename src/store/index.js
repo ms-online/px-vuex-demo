@@ -45,7 +45,30 @@ export default new Vuex.Store({
     decrementCount(state, payload) {
       state.count -= payload.count;
     },
+    setTodos: (state, todos) => {
+      state.todos = todos;
+    },
   },
-  actions: {},
+  actions: {
+    incrementCountAsync(context) {
+      setTimeout(() => {
+        context.commit('incrementCount');
+      }, 2000);
+    },
+    decrementCountAsync({ commit }, payload) {
+      setTimeout(() => {
+        commit('decrementCount', payload);
+      }, 3000);
+    },
+
+    // 数据请求
+    async fetchTodos({ commit }) {
+      const response = await axios.get(
+        'http://jsonplaceholder.typicode.com/todos'
+      );
+      console.log(response);
+      commit('setTodos', response.data);
+    },
+  },
   modules: {},
 });
