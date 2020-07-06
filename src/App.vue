@@ -1,5 +1,8 @@
 <template>
-  <div id="app">{{ count }}</div>
+  <div id="app">
+    <p>{{ count }}</p>
+    <p>{{ todos }}</p>
+  </div>
 </template>
 
 <script>
@@ -9,6 +12,9 @@ export default {
   computed: {
     count() {
       return this.$store.state.count;
+    },
+    todos() {
+      return this.$store.state.todos;
     },
   },
 };
