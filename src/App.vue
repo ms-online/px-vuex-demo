@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <p>{{ count }}</p>
+    <!-- <p>{{ count }}</p>
     <p>{{ completedTodos }}</p>
     <p>{{ completedTodosCount }}</p>
-    <p>{{ getTodoById(3) }}</p>
+    <p>{{ getTodoById(3) }}</p> -->
+    <button @click="decrementCount({ count: 3 })">-</button>
+    <span> {{ count }} </span>
+    <button @click="incrementCount">+</button>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 export default {
   name: 'App',
   components: {},
@@ -45,6 +48,19 @@ export default {
   //   },
   //   todos() {
   //     return this.$store.state.todos;
+  //   },
+  // },
+
+  // mutaion&mapMutations
+  methods: mapMutations(['incrementCount', 'decrementCount']),
+  // methods: {
+  //   decrementCount(payload) {
+  //     // console.log(1);
+  //     this.$store.commit('decrementCount', payload);
+  //   },
+  //   incrementCount() {
+  //     // console.log(0);
+  //     this.$store.commit('incrementCount');
   //   },
   // },
 };

@@ -1,5 +1,5 @@
 # vuex-demo
 
-## lesson3:getters & mapGetters 的使用
+## lesson4:mutation & mutations
 
-getter 可以对原有状态进行操作
+mutation 必须是同步函数
