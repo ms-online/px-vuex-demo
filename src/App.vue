@@ -1,16 +1,17 @@
 <template>
-  <div id="app">Hello!!</div>
+  <div id="app">{{ count }}</div>
 </template>
 
 <script>
-
 export default {
   name: 'App',
-  components: {
-
-  }
-}
+  components: {},
+  computed: {
+    count() {
+      return this.$store.state.count;
+    },
+  },
+};
 </script>
 
-<style>
-</style>
+<style></style>
