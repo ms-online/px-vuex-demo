@@ -1,19 +1,9 @@
 # vuex-demo
 
-## Project setup
-```
-npm install
-```
+## lesson1-2:vuex 中的 state
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+安装 vuex
 
-### Compiles and minifies for production
 ```
-npm run build
+vue add vuex
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
